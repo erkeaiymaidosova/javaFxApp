@@ -4,38 +4,89 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.TilePane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER" spacing="20.0" style="-fx-background-color: #9ca1f3;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javafxapp.HelloController">
-  <padding>
-    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-  </padding>
-
-  <Label fx:id="myLabel" style="-fx-background-color: #4940bf;" text="The Body Mass Index Formula" textFill="#f5f5f5" wrapText="true">
-      <font>
-         <Font name="Avenir Black" size="13.0" />
-      </font></Label>
-   <Label fx:id="myLabel2" contentDisplay="CENTER" prefHeight="19.0" prefWidth="118.0" style="-fx-background-color: #4940bf;" text="Write your weight" textAlignment="CENTER" textFill="#f5f5f5" textOverrun="CENTER_ELLIPSIS" wrapText="true">
-      <font>
-         <Font name="Avenir Black" size="13.0" />
-      </font>
-   </Label>
-   <TextField fx:id="myText" prefHeight="26.0" prefWidth="43.0" style="-fx-background-color: #fffff;">
-      <opaqueInsets>
-         <Insets />
-      </opaqueInsets>
-      <VBox.margin>
-         <Insets />
-      </VBox.margin></TextField>
-   <Label fx:id="myLabel1" prefHeight="19.0" prefWidth="114.0" style="-fx-background-color: #4940bf;" text="Write your height" textFill="#f5f5f5" wrapText="true">
-      <font>
-         <Font name="Avenir Black" size="13.0" />
-      </font>
-   </Label>
-   <TextField fx:id="myText1" style="-fx-background-color: #fffff;">
-      <VBox.margin>
-         <Insets />
-      </VBox.margin></TextField>
-  <Button fx:id="onHelloButtonClick" onAction="#onClickButton" text="Calculate BMI" />
-</VBox>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javafxapp.HelloController">
+   <top>
+      <VBox prefHeight="74.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="myLabel" prefHeight="74.0" prefWidth="601.0" text="                                                 The Body Mass Index Formula" textFill="#594c85">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+   </top>
+   <left>
+      <VBox prefHeight="292.0" prefWidth="120.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox prefHeight="79.0" prefWidth="106.0">
+               <children>
+                  <Label contentDisplay="CENTER" graphicTextGap="8.0" prefHeight="71.0" prefWidth="120.0" text="   Metric Units" textAlignment="CENTER" textFill="#46448a">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox prefHeight="78.0" prefWidth="120.0">
+               <children>
+                  <Label contentDisplay="CENTER" graphicTextGap="8.0" prefHeight="71.0" prefWidth="120.0" text="   English Units" textAlignment="CENTER" textFill="#46448a">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </Label>
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+   </left>
+   <right>
+      <Pane prefHeight="326.0" prefWidth="77.0" BorderPane.alignment="CENTER" />
+   </right>
+   <bottom>
+      <Pane prefHeight="149.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <BorderPane layoutX="188.0" layoutY="6.0" prefHeight="45.0" prefWidth="258.0">
+               <center>
+                  <Button fx:id="onHelloClickButton" mnemonicParsing="false" onAction="#onClickButton" prefHeight="26.0" prefWidth="104.0" text="Calculate(m)" BorderPane.alignment="CENTER" />
+               </center>
+               <left>
+                  <Button fx:id="onClickButton1" mnemonicParsing="false" onAction="#onClickButton1" prefHeight="26.0" prefWidth="104.0" text="Calculate(eng)" BorderPane.alignment="CENTER" />
+               </left>
+            </BorderPane>
+         </children>
+      </Pane>
+   </bottom>
+   <center>
+      <TilePane prefHeight="212.0" prefWidth="393.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="text1" prefHeight="80.0" prefWidth="154.0" text=" Enter your weight/height" textFill="#3131bf" />
+            <Pane prefHeight="68.0" prefWidth="200.0">
+               <children>
+                  <TextField fx:id="myText" prefHeight="80.0" prefWidth="100.0" />
+                  <TextField fx:id="myText1" layoutX="100.0" prefHeight="80.0" prefWidth="101.0" />
+               </children>
+            </Pane>
+            <Label fx:id="text2" prefHeight="80.0" prefWidth="154.0" text=" Enter your weight/height" textFill="#3131bf" />
+            <Pane prefHeight="68.0" prefWidth="200.0">
+               <children>
+                  <TextField fx:id="myText2" prefHeight="80.0" prefWidth="100.0" />
+                  <TextField fx:id="myText3" layoutX="100.0" prefHeight="80.0" prefWidth="100.0" />
+               </children>
+            </Pane>
+         </children>
+      </TilePane>
+   </center>
+</BorderPane>
