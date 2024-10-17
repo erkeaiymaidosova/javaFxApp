@@ -3,6 +3,9 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Pane?>
@@ -14,6 +17,21 @@
    <top>
       <VBox prefHeight="74.0" prefWidth="600.0" BorderPane.alignment="CENTER">
          <children>
+            <MenuBar fx:id="Help">
+              <menus>
+                <Menu mnemonicParsing="false" text="File">
+                  <items>
+                    <MenuItem fx:id="Clear" mnemonicParsing="false" onAction="#onClear" text="Clear" />
+                        <MenuItem fx:id="Exit" mnemonicParsing="false" onAction="#onExit" text="Exit" />
+                  </items>
+                </Menu>
+                <Menu fx:id="help" mnemonicParsing="false" onAction="#onHelp" text="Help">
+                     <items>
+                        <MenuItem fx:id="instruction" mnemonicParsing="false" onAction="#onHelp" text="Intruction" />
+                     </items>
+                </Menu>
+              </menus>
+            </MenuBar>
             <Label fx:id="myLabel" prefHeight="74.0" prefWidth="601.0" text="                                                 The Body Mass Index Formula" textFill="#594c85">
                <font>
                   <Font size="18.0" />

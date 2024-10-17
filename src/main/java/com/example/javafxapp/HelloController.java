@@ -2,8 +2,12 @@ package com.example.javafxapp;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextField;
 import java.text.DecimalFormat;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
+
 
 public class HelloController {
     @FXML
@@ -20,6 +24,8 @@ public class HelloController {
     private TextField myText2;
     @FXML
     private TextField myText3;
+    @FXML
+    private MenuItem instruction;
     DecimalFormat df = new DecimalFormat("#.##");
     @FXML
     private void onClickButton(){
@@ -52,5 +58,25 @@ public class HelloController {
             text2.setText(String.valueOf(df.format(bmiEnglish)+ "-Obesity"));
         }
 
+    }
+    @FXML
+    private void onClear(){
+        myText.clear();
+        myText1.clear();
+        myText2.clear();
+        myText3.clear();
+    }
+    @FXML
+    private void onExit(){
+        javafx.application.Platform.exit();
+    }
+    @FXML
+    private void onHelp(){
+        Alert alert = new Alert(AlertType.INFORMATION);
+        alert.setTitle("Instructions:");
+        alert.setHeaderText("How to use BMI calculator");
+        alert.setContentText("If you want to enter metric units,enter first your weight and then height in first row" +
+        "If you want to enter english units enter the same thing in the second row");
+        alert.showAndWait();
     }
 }
